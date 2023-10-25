@@ -1,0 +1,4 @@
+bonmin.algorithm              B-OA
+bonmin.allowable_gap          -1e-09
+bonmin.allowable_fraction_gap -1e-09
+bonmin.cutoff_decr            -1e-18

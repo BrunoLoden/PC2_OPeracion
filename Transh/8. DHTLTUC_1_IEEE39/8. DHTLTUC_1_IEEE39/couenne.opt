@@ -1,0 +1,136 @@
+##########################################
+# Output options
+##########################################
+
+problem_print_level					    1
+branching_print_level					0
+#boundtightening_print_level			1
+convexifying_print_level				0
+#nlpheur_print_level					1
+lp_log_level							0
+#mip_log_level							0
+nlp_log_level							0
+display_stats 							yes
+#reformulate_print_level					1
+
+##########################################
+# Linearization options
+##########################################
+
+#convexification_cuts                    100
+#convexification_points                  100
+delete_redundant                         yes
+#violated_cuts_only                      no
+#opt_window                               1000  
+
+##########################################
+# Branching options
+##########################################
+
+branch_fbbt                              yes
+#branching_object                        var_object              
+cont_var_priority                       9999
+branch_pt_select                         mid-point  #min-area
+convexification_type		             around-current-point #around-current-point #uniform-grid # 
+#max_fbbt_iter                           10
+
+# Multipliers of pseudocosts for estimating and update estimation of bound
+#
+# When using pseudocosts, the lower bound of a node is estimated by multiplying 
+# the pseudocost by a measure of the "infeasibility" of that variable.
+#
+# Valid Settings:
+#   infeasibility (infeasibility returned by object)
+#   projectDist (distance between current LP point and resulting branches' LP points)
+#   interval_lp (width of the interval between bound and current lp point)
+#   interval_lp_rev (similar to interval_lp, reversed)
+#   interval_br (width of the interval between bound and branching point)
+#   interval_br_rev (similar to interval_br, reversed)
+
+#pseudocost_mult 						projectDist
+
+
+# Use distance between LP points to update multipliers of
+# pseudocosts. Can give a better estimate of the change in the node as
+# a result of the branching rule.
+
+#pseudocost_mult_lp 						yes
+
+##########################################
+#  Bound tightening options
+##########################################
+
+feasibility_bt                           yes
+redcost_bt                               yes
+aggressive_fbbt                          no
+optimality_bt                            no
+#log_num_abt_per_level                   5
+#log_num_obbt_per_level                  5
+
+##########################################
+#  Nonlinear solver options (Heuristic)
+##########################################
+
+#local_optimization_heuristic            yes
+#log_num_local_optimization_per_level    5
+
+##########################################
+#  Tolerance options
+##########################################
+
+#art_lower                                0
+#feas_tolerance                           0.001
+allowable_fraction_gap                   0.001
+#allowable_gap                            1000   
+
+##########################################
+#  Time options
+##########################################
+
+time_limit                              1200
+
+##########################################
+#  Disjunctive cut options
+##########################################
+
+#minlp_disj_cuts                        -1
+#disj_depth_level                        2
+#disj_depth_stop                        -1
+
+##########################################
+#  Other options
+##########################################
+
+#solvefinal                              yes
+#least_square_init_duals                yes
+#least_square_init_primal               yes
+#bound_frac	                            0.5
+#bound_mult_init_val	                0.00001
+#slack_bound_frac                       0.5
+warm_start_init_point                   no
+#warm_start_same_structure  			yes
+#warm_start_entire_iterate				yes
+#warm_start_bound_push                  1e-9
+#warm_start_bound_frac                  1e-9
+#warm_start_slack_bound_frac            1e-9
+#warm_start_slack_bound_push            1e-9
+#warm_start_mult_bound_push             1e-9
+#number_strong_branch                    20
+#number_before_trust                     20
+
+
+##########################################
+#  BONMIN options
+##########################################
+
+
+#bonmin.allowable_gap                   -1e-03
+#bonmin.allowable_fraction_gap          -1e-03
+#bonmin.cutoff_decr                     -1e-03
+#bonmin.num_resolve_at_node              20
+#bonmin.num_resolve_at_root              20
+#bonmin.num_cut_passes                    5
+#bonmin.random_generator_seed           10
+#bonmin.node_comparison                 dynamic
+#check_lp                                yes                           
+bonmin.algorithm                        B-OA
